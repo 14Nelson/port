@@ -3,7 +3,7 @@ const path = require('path');
 const app = express();
 
 // Configuração para servir arquivos estáticos da pasta "public"
-app.use(express.static(path.join(__dirname, 'port', 'public')));
+app.use(express.static('public'));
 
 // Rota principal
 app.get('/', (req, res) => {
@@ -13,8 +13,7 @@ app.get('/', (req, res) => {
 app.get('/contat', function(req, res) {
   res.send('contat!!!!');
 })
-app.use(express.static('public'));
-let PORT = 3000;
-app.listen(PORT, function() {
-  console.log('Listem in 3000');
-})
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Servidor iniciado na porta ${port}`);
+});
