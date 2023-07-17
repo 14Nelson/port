@@ -7,7 +7,7 @@ app.use(express.static(path.join(__dirname, 'port', 'public')));
 
 // Rota principal
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'port', 'public', 'index.html'));
+  res.sendFile(path.join(__dirname+"/index.html"));
 });
 
 app.get('/contat', function(req, res) {
