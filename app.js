@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/contat', function(req, res) {
-  res.send('contact!!');
+  res.sendFile(__dirname+"/public");
 })
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
